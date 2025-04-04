@@ -14,10 +14,6 @@ COPY . .
 # Install backend dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
-# Install frontend dependencies and build Vite assets
-RUN npm install && npm run build
-
-# Laravel app setup
 RUN php artisan key:generate && \
     php artisan config:cache && \
     php artisan route:cache && \

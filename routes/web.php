@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +24,4 @@ Route::view('/home','home');
 
 Route::view('/tasks','tasks.show');
 
-Route::get('/test',function(){
-        return "<h1>Test</h1>";
-});
+Route::get('/test',[TestController::class,'index']);

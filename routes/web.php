@@ -22,3 +22,7 @@ Route::get('/', function (){
 Route::view('/home','home');
 
 Route::view('/tasks','tasks.show');
+
+Route::get('/test',function(){
+        return "<h1>Test</h1>";
+});
